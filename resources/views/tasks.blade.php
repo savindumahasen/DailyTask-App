@@ -32,6 +32,7 @@
                             <th>Task</th>
                             <th>IsCompleted</th>
                             <th>Action</th>
+                            <th>Delete</th>
                             @foreach($Tasks as $task)
                             <tr>
                                 <td>{{$task->id}}</td>
@@ -49,6 +50,9 @@
                                     @else
                                     <a href="/markascompleted/{{$task->id}}" class="btn btn-warning">Mark As Completed</a>
                                     @endif
+                                </td>
+                                <td>
+                                    <a href="/deleteTask/{{$task->id}}" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
