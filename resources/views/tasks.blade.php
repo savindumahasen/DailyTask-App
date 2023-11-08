@@ -22,6 +22,8 @@
                         {{csrf_field()}}
                                 <input type="text" name="task" class="form-control" placeholder="Please Enter your task here">
                                 <br/>
+                                <input type="hidden" name="isCompleted" class="form-control" placeholder="Please Enter your task here">
+                                <br/>
                                 <br/>
                                 <button type="submit" class="btn btn-primary"  name="save" value="save">Save</button>
                                 <button type="submit" class="btn btn-warning" name="clear" value="clear">Clear</button>
@@ -32,7 +34,8 @@
                             <th>Task</th>
                             <th>IsCompleted</th>
                             <th>Action</th>
-                            <th>Delete</th>
+                            <th>Delete Task</th>
+                            <th>Update Task</th>
                             @foreach($Tasks as $task)
                             <tr>
                                 <td>{{$task->id}}</td>
@@ -53,6 +56,9 @@
                                 </td>
                                 <td>
                                     <a href="/deleteTask/{{$task->id}}" class="btn btn-danger">Delete</a>
+                                </td>
+                                <td>
+                                    <a href="/getTask/{{$task->id}}" class="btn btn-success">Update</a>
                                 </td>
                             </tr>
                             @endforeach
