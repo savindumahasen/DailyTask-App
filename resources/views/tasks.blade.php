@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Daily Tasks</title>
+</head>
+<body>
+    <div class="container">
+        <div class="text-center">
+              <h1>My Daily Tasks</h1>
+               <div class="row">
+                   <div class="col-md-12">
+                      @foreach($errors->all() as $error)
+                            <div class="alert alert-danger">
+                                {{$error}}
+                            </div>
+
+                      @endforeach
+                       <form method="post" action="/saveTask">
+                        {{csrf_field()}}
+                                <input type="text" name="task" class="form-control" placeholder="Please Enter your task here">
+                                <br/>
+                                <br/>
+                                <button type="submit" class="btn btn-primary"  name="save" value="save">Save</button>
+                                <button type="submit" class="btn btn-warning" name="clear" value="clear">Clear</button>
+                                <br/><br/>
+                      </form>
+                        <table class="table table-dark">
+                            <th>Id</th>
+                            <th>Task</th>
+                            <th>IsCompleted</th>
+                            @foreach($Tasks as $task)
+                            <tr>
+                                <td>{{$task->id}}</td>
+                                <td>{{$task->task}}</td>
+                                <td>
+                                 @if($task->isCompleted)    
+                                  <button class="btn btn-success">Completed</button>
+                                 @else
+                                  <button class="btn btn-warning">Not Completed</button>
+                                 @endif
+                                </td>
+                            </tr>
+                            @endforeach
+                        </table>
+                   </div>
+               </div>
+        </div>
+    </div>
+</body>
+</html>
