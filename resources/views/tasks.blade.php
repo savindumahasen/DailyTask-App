@@ -44,7 +44,11 @@
                                  @endif
                                 </td>
                                 <td>
-                                    <a href="/markascompleted/{{$task->id}}" class="btn btn-primary">Mark As Completed</a>
+                                    @if($task->isCompleted)
+                                    <a href="/markasnotcompleted/{{$task->id}}" class="btn btn-primary">Mark As Not Completed</a>
+                                    @else
+                                    <a href="/markascompleted/{{$task->id}}" class="btn btn-warning">Mark As Completed</a>
+                                    @endif
                                 </td>
                             </tr>
                             @endforeach
