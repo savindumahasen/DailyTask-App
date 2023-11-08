@@ -40,4 +40,11 @@ class TaskController extends Controller
         $data=dailytask::all();
         return view('tasks')->with('Tasks',$data);
     }
+    public function deleteTask($id){
+
+        $task=dailytask::find($id);
+        $task->delete();
+        $data=dailytask::all();
+        return view('tasks')->with('Tasks',$data);
+    }
 }
