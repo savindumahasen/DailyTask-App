@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\dailytask;
 use Illuminate\Http\Request;
-use App\Models\task;
+
 
 class TaskController extends Controller
 {
@@ -46,5 +46,23 @@ class TaskController extends Controller
         $task->delete();
         $data=dailytask::all();
         return redirect('tasks')->with('Tasks',$data);
+    }
+    public function getTask($id){
+
+         $task=dailytask::find($id);
+         //dd($task);
+         $tasks=[$task];
+         return view('updateTask')->with('Task',$tasks);
+    }
+    public function updateTask(Request $request){
+   
+        $id=$request->id;
+        $task=$request->task;
+        $task=dailytask::find($id);
+        $task->task=$task;
+        $task->save();
+        $data=dailytask::all();
+        return redirect('tasks')->with('Task',$data);
+
     }
 }
