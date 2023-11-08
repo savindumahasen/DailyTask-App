@@ -22,4 +22,14 @@ class TaskController extends Controller
          return view('tasks')->with('Tasks',$data);
     
     }
+    public function updateTask($id){
+
+        $task= dailytask::find($id);
+        $task->isCompleted=1;
+        $task->save();
+        $data=dailytask::all();
+        return view('tasks')->with('Tasks',$data);
+
+
+    }
 }
