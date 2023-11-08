@@ -22,7 +22,7 @@ class TaskController extends Controller
          return view('tasks')->with('Tasks',$data);
     
     }
-    public function updateTask($id){
+    public function updateMarkAsCompleted($id){
 
         $task= dailytask::find($id);
         $task->isCompleted=1;
@@ -32,7 +32,7 @@ class TaskController extends Controller
 
 
     }
-    public function updateTask1($id){
+    public function updateMarkAsNotCompleted($id){
 
         $task=dailytask::find($id);
         $task->isCompleted=0;
