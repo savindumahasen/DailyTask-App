@@ -30,3 +30,5 @@ Route::post('/saveTask',[TaskController::class,'store']);
 Route::get('/markascompleted/{id}',[TaskController::class,'updateMarkAsCompleted']);
 Route::get('/markasnotcompleted/{id}', [TaskController::class,'updateMarkAsNotCompleted']);
 Route::get('/deleteTask/{id}', [TaskController::class,'deleteTask']);
+Route::get('/getTask/{id}',[TaskController::class,'getTask']);
+Route::post('/updateTask',[TaskController::class,'updateTask']);
