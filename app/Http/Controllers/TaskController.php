@@ -58,9 +58,9 @@ class TaskController extends Controller
    
         $id=$request->id;
         $task=$request->task;
-        $task=dailytask::find($id);
-        $task->task=$task;
-        $task->save();
+        $task1=dailytask::find($id);
+        $task1->task=$task;
+        $task1->save();
         $data=dailytask::all();
         return redirect('tasks')->with('Task',$data);
 
