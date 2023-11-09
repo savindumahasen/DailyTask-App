@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dailytasks', function (Blueprint $table) {
+        Schema::create('dailytasks1', function (Blueprint $table) {
             $table->id();
             $table->string('task');
             $table->boolean('isCompleted')->default(0);
