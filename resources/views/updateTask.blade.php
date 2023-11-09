@@ -20,6 +20,7 @@
           <br/>
           <br/>
           <button type="submit" class="btn btn-primary"  name="save" value="save">Update</button>
+          <button type="submit" class="btn btn-danger" name="clear" value="clear">Cancel</button>
           <br/><br/>
         </form>
      @endforeach

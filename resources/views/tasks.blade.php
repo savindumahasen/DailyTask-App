@@ -10,6 +10,7 @@
     <div class="container">
         <div class="text-center">
               <h1>My Daily Tasks</h1>
+              <br/><br/>
                <div class="row">
                    <div class="col-md-12">
                       @foreach($errors->all() as $error)

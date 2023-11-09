@@ -19,7 +19,7 @@
     <body class="antialiased">
          <h1 style="text-align: center; font-size:48px;">Daily Task App</h1>
          <div class="container">
-            <button style="margin-left: 600px;margin-top:400px;"><a href="/tasks"  class="btn btn-primary">Click Me</a></button>
+            <button style="margin-left: 600px;margin-top:400px;"><a href="/tasks"  class="btn btn-primary">Welcome</a></button>
         </div>
     </body>
 </html>
