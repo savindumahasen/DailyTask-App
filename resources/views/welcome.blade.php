@@ -9,6 +9,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
         <!-- Styles -->
         <style>
@@ -17,5 +18,8 @@
     </head>
     <body class="antialiased">
          <h1 style="text-align: center; font-size:48px;">Daily Task App</h1>
+         <div class="container">
+            <button style="margin-left: 600px;margin-top:400px;"><a href="/tasks"  class="btn btn-primary">Click Me</a></button>
+        </div>
     </body>
 </html>
